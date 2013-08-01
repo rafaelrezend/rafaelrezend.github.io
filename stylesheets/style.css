@@ -49,6 +49,16 @@ body {
   height: 500px;
 }
 
+.image {
+    position:relative;
+}
+.image .text {
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:300px;
+}
+
 
 
 /* MARKETING CONTENT
@@ -61,14 +71,14 @@ body {
 }
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing .col-lg-3 {
   text-align: center;
   margin-bottom: 20px;
 }
 .marketing h2 {
   font-weight: normal;
 }
-.marketing .col-lg-4 p {
+.marketing .col-lg-3 p {
   margin-left: 10px;
   margin-right: 10px;
 }
