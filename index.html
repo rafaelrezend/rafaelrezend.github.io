@@ -7,7 +7,7 @@
     <meta name="author" content="">
 
     <title>rezend</title>
-
+	
     <!-- Bootstrap core CSS -->
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
 
@@ -75,12 +75,12 @@
 		  <!-- <p><a class="btn btn-default" href="#">View details &raquo;</a></p> -->
         </div><!-- /.col-lg-3 -->
         <div class="col-12 col-sm-4 col-lg-4">
-          <img class="img-circle grayscale" src="images/big_icon_code.png" height="131px">
+          <a href="https://github.com/rafaelrezend"><img class="img-circle grayscale" src="images/big_icon_code.png" height="131px"></a>
           <h4>What I've been doing</h4>
           <p>Learning, implementing, learning, trying, learning. My ideas. Friends' ideas, learning, learning...</p>
         </div><!-- /.col-lg-3 -->
         <div class="col-12 col-sm-4 col-lg-4">
-          <img class="img-circle grayscale" src="images/big_icon_journal.png" height="131px">
+          <a id="ext-tooltip" data-title="sorry...under construction" data-placement="top"><img class="img-circle grayscale" src="images/big_icon_journal.png" height="131px"></a>
           <h4>Journal</h4>
           <p>Things I write, read, watch, comment. Many things are for my own future reference :)</p>
         </div><!-- /.col-lg-3 -->
@@ -93,32 +93,26 @@
 		<h4><span class="text-muted">I also like to...</span></h4>
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
-			<div class="col-lg-3">
-				<img class="img-rounded" src="images/icon_soundcloud.png" width="25px">
+			<div class="col-3">
+				<a href="https://soundcloud.com/audiotripband" id="ext-tooltip" data-title="...sing in the shower!"><img class="img-rounded grayscale" src="images/icon_soundcloud.png" width="30px"></a>
 			</div>
-			<div class="col-lg-3">
-				<img class="img-rounded" src="images/icon_soundcloud.png" width="25px">
+			<div class="col-3">
+				<a id="ext-tooltip" data-title="...pretend I'm photographer. (not ready yet)"><img class="img-rounded grayscale" src="images/icon_camera.png" width="30px"></a>
 			</div>
-			<div class="col-lg-3">
-				<img class="img-rounded" src="images/icon_soundcloud.png" width="25px">
+			<div class="col-3">
+				<a href="http://vidasuica.wordpress.com/" id="ext-tooltip" data-title="...tell people about my lovely home. (portuguese only)"><img class="img-rounded grayscale" src="images/icon_swiss.png" width="30px"></a>
 			</div>
-			<div class="col-lg-3">
-				<img class="img-rounded" src="images/icon_soundcloud.png" width="25px">
+			<div class="col-3">
+				<a href="http://myaquaria.wordpress.com/" id="ext-tooltip" data-title="...take my fishes for a walk!"><img class="img-rounded grayscale" src="images/icon_aquaria.png" width="30px"></a>
 			</div>
 		</div>
 	</div><!-- /.container -->
-
-
-      
-	  
-	  
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Rafael Rezende. &middot;</p>
-      </footer>
+	
+	<!-- FOOTER -->
+	<footer>
+		<p class="pull-right"><a href="#">Back to top</a></p>
+		<p>&copy; 2013 Rafael Rezende. &middot;</p>
+	</footer>
 
     </div><!-- /.container -->
 
@@ -130,5 +124,13 @@
     <script src="javascripts/jquery.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/holder.js"></script>
+	
+	<!-- Popover -->
+	<script>
+			<!-- Use $('#blob') for a single element with id=blob. Or $('[id=blob]') for multiple elements with id=blob. -->
+			$('[id=ext-link]').popover({placement:'bottom', trigger:'hover', container: 'body'});
+			$('[id=ext-tooltip]').tooltip({placement:'bottom', trigger:'hover', container: 'body'});	
+	</script>
+	
   </body>
 </html>
