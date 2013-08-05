@@ -12,7 +12,7 @@
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/style-academic.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -44,9 +44,6 @@
     <!-- Carousel
     ================================================== -->
 	<tr>
-	<div class="image-container">
-		<img alt="" src="images/bg.jpg" class="img-responsive"/>
-	</div>
  	<div class="socialmedia">
 		<div class="visible-sm">
 			<a href="mailto:rafaelrezend@gmail.com"><img alt="" src="images/icon_gmail.png" height="40" width="40"/></a>
@@ -64,49 +61,120 @@
 	
 	<hr class="divider">
 	
-    <div class="container marketing">
+    <div class="container publication">
+	
+		<div class="col-12 single">
+			<h3>User-Perceived Instantaneous Service Availability Evaluation</h3>
 
-      <!-- Four columns of text below the background -->
-      <div class="row">
-        <div class="col-12 col-sm-4 col-lg-4">
-          <img class="img-circle grayscale" src="images/big_icon_usi.png">
-		  <h4>Academic stuff</h4>
-		  <p>Engineers are students forever! Sometimes officially, sometimes not. Yep, I have published some stuff...</p>
-		  <!-- <p><a class="btn btn-default" href="#">View details &raquo;</a></p> -->
-        </div><!-- /.col-lg-3 -->
-        <div class="col-12 col-sm-4 col-lg-4">
-          <a href="https://github.com/rafaelrezend"><img class="img-circle grayscale" src="images/big_icon_code.png" height="131px"></a>
-          <h4>What I've been doing</h4>
-          <p>Learning, implementing, learning, trying, learning. My ideas. Friends' ideas, learning, learning...</p>
-        </div><!-- /.col-lg-3 -->
-        <div class="col-12 col-sm-4 col-lg-4">
-          <a id="ext-tooltip" data-title="sorry...under construction" data-placement="top"><img class="img-circle grayscale" src="images/big_icon_journal.png" height="131px"></a>
-          <h4>Journal</h4>
-          <p>Things I write, read, watch, comment. Many things are for my own future reference :)</p>
-        </div><!-- /.col-lg-3 -->
-      </div><!-- /.row -->
-	</div><!-- /.container -->
-	  
-	  <hr class="divider">
-	  
-	<div class="container small-marketing">
-		<h4><span class="text-muted">I also like to...</span></h4>
-		<!-- Three columns of text below the carousel -->
-		<div class="row">
-			<div class="col-3">
-				<a href="https://soundcloud.com/audiotripband" id="ext-tooltip" data-title="...sing in the shower!"><img class="img-rounded grayscale" src="images/icon_soundcloud.png" width="30px"></a>
+			<a href="http://prdc.dependability.org/2013/"><h5>19th IEEE Pacific Rim International Symposium on Dependable Computing (PRDC 2013)</h5></a>
+			
+			<h5><b>Authors: </b>Rafael Rezende, Andreas Dittrich and Miroslaw Malek</h5>
+			
+			<!-- The figure is only shown for medium and large screens -->
+			<div class="col-12 col-sm-4 hidden-sm">
+				<img src="images/publications/prdc2013.png">
 			</div>
-			<div class="col-3">
-				<a id="ext-tooltip" data-title="...pretend I'm photographer. (not ready yet)"><img class="img-rounded grayscale" src="images/icon_camera.png" width="30px"></a>
+			
+			<div class="col-12 col-sm-8">
+			<p>Today's businesses rely ever more on dependable service provision deployed on \emph{information and communications technology} (ICT) infrastructures.
+			Service dependability is highly influenced by the individual infrastructure component properties.
+			Combining these properties for consistent dependability analysis is challenging as every service requester might use a different set of components during service usage, constituting the user-perceived view on a service.<br>
+
+			This paper presents a methodology to evaluate user-perceived instantaneous service availability.
+			It uses three input models:
+			(1) The ICT infrastructure, with failure rates, repair rates and deployment times of all components, (2) an abstract description of complex hierarchical services, (3) a mapping that contains concrete ICT components for the service pair requester and provider, as well as their existing replicas, and a duration of usage.
+			The methodology then automatically generates an availability model from those parts of the ICT infrastructure needed during provision for the specified pair.<br>
+
+			To calculate instantaneous availability, the age of the ICT components, the order and time of their usage during service provision are taken into account.
+			The methodology supports generation of different availability models, we demonstrate this by providing reliability block diagrams and fault-trees.
+			We demonstrate the feasibility of the methodology by applying it to parts of the network infrastructure of University of Lugano, Switzerland.</p>
 			</div>
-			<div class="col-3">
-				<a href="http://vidasuica.wordpress.com/" id="ext-tooltip" data-title="...tell people about my lovely home. (portuguese only)"><img class="img-rounded grayscale" src="images/icon_swiss.png" width="30px"></a>
+			
+			<!-- The button is only shown for small screens -->
+			<!-- <div class="visible-sm" align="center">
+				<button class="btn btn-default btn-mini">Read article (in progress)</a>
+			</div> -->
+		</div>
+		
+
+		<div class="col-12 single">
+			<h3>Model-Driven Evaluation of User-Perceived Service Availability</h3>
+			
+			<a href="http://ewdc2013.dei.uc.pt/"><h5>14th European Workshop on Dependable Computing (EWDC 2013)</h5></a>
+			
+			<h5><b>Authors: </b>Andreas Dittrich and Rafael Rezende</h5>
+			
+			<!-- The figure is only shown for medium and large screens -->
+			<div class="col-12 col-sm-4 hidden-sm">
+				<a href="http://link.springer.com/chapter/10.1007%2F978-3-642-38789-0_4"><img src="images/publications/ewdc2013.png"></a>
 			</div>
-			<div class="col-3">
-				<a href="http://myaquaria.wordpress.com/" id="ext-tooltip" data-title="...take my fishes for a walk!"><img class="img-rounded grayscale" src="images/icon_aquaria.png" width="30px"></a>
+			<div class="col-12 col-sm-8">
+			<p>Service-oriented architecture (SOA) has emerged as an approach to master growing system complexity by proposing services as basic building elements of system design. However, it remains difficult to evaluate dependability of such distributed and heterogeneous functionality as it depends highly on the properties of the enabling information and communications technology (ICT) infrastructure. Moreover, every specific pair service client and provider can utilize different ICT components, constituting for the user-perceived view of a service.<br>			
+			We provide a model-driven methodology to automatically create reliability block diagrams of such views. Given a service description, a network topology model and a pair service client and provider, it identifies relevant ICT components and generates a user-perceived service availability model (UPSAM). We then use this UPSAM to calculate the steady-state availability of different views on an exemplary mail service deployed in the network infrastructure of University of Lugano, Switzerland.</p>
+			</div>
+			
+			<!-- The button is only shown for small screens -->
+			<div class="visible-sm" align="center">
+				<a href="http://link.springer.com/chapter/10.1007%2F978-3-642-38789-0_4" class="btn btn-default btn-mini">Read article</a>
 			</div>
 		</div>
+		
+		
+		<div class="col-12 single">
+			<h3>A Model for Evaluation of User-Perceived Service Properties</h3>
+
+			<a href="http://www.ipdps.org/ipdps2013/"><h5>27th IEEE International Parallel &amp; Distributed Processing Symposium (IPDPS 2013)</h5></a>
+			
+			<h5><b>Authors: </b>Andreas Dittrich, Igor Kaitovic, Cristina Murillo and Rafael Rezende</h5>
+			
+			<!-- The figure is only shown for medium and large screens -->
+			<div class="col-12 col-sm-4 hidden-sm">
+				<img src="images/publications/ipdps2013.png"></a>
+			</div>
+			
+			<div class="col-12 col-sm-8">
+			<p>An ever-increasing number of both functional and non-functional requirements has resulted in growing system complexity which demands new solutions in system modeling and evaluation.
+			As a remedy, service-oriented architecture (SOA) offers services as basic building elements of system design.
+			Service dependability is highly dependent on the properties of the underlying information and communications technology (ICT) infrastructure.
+			This is especially true for the user-perceived dependability of a specific pair service client and provider as every pair may utilize different ICT components.<br>
+
+			We provide a model for the description of ICT components and their non-functional properties based on the Unified Modeling Language (UML).
+			Given a service description, a network topology model and a pair service client and provider, we propose a methodology to automatically identify relevant ICT components and generate a user-perceived service infrastructure model (UPSIM).
+			We demonstrate the feasibility of the methodology by applying it to parts of the service network infrastructure at University of Lugano (USI), Switzerland.
+			We then show how this methodology can be used to facilitate user-perceived service dependability analysis.</p>
+			</div>
+			
+			<!-- The button is only shown for small screens -->
+			<!-- <div class="visible-sm" align="center">
+				<button class="btn btn-default btn-mini">Read article (in progress)</a>
+			</div> -->
+		</div>
+		
+		
+		<div class="col-12 single">
+			<h3>Model-Driven Approach to Design of ICT infrastructure for Precision Farming</h3>
+			
+			<a href="http://www.etfa2012.org/"><h5>17th IEEE international conference (WiP) on Emerging Technologies &amp; Factory Automation (ETFA 2012)</h5></a>
+			
+			<h5><b>Authors: </b>Igor Kaitovic, Rafael Rezende, Cristina Murillo and Cesare Fantuzzi</h5>
+			
+			<!-- The figure is only shown for medium and large screens -->
+			<div class="col-12 col-sm-4 hidden-sm">
+				<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6489709"><img src="images/publications/etfa2012.png"></a>
+			</div>
+			<div class="col-12 col-sm-8">
+			<p>Design of complex systems involving a number of experts from various fields necessarily includes modeling at different levels of abstraction. Modeling is particularly important in the initial phase of a joint project when all system requirements and constraints have to be clearly defined and understood by all the partners. Once an unambiguous structural model has been achieved and components interfaces fixed, design of components can be done independently. For the initial phase, a very simplified modeling methodology based on UML that can be easily understood and applied has been proposed. The application of the methodology has been presented through the design of full structural model of the infrastructure for precision farming. Modeled infrastructure is an open ICT hardware-software solution based on ISOBUS specification, that enables partial automation of tractors increasing safety and production efficiency. Model achieved through several steps presents a mutual understanding platform between the partners. Most importantly, a precise model has been achieved without the necessity of in deep study of UML by all the partners.</p>
+			</div>
+			
+			<!-- The button is only shown for small screens -->
+			<div class="visible-sm" align="center">
+				<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6489709" class="btn btn-default btn-mini">Read article</a>
+			</div>
+		</div>
+
 	</div><!-- /.container -->
+	  
+	<hr class="divider">
 	
 	<!-- FOOTER -->
 	<footer>
@@ -121,16 +189,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="javascripts/jquery.js"></script>
+    <!-- <script src="javascripts/jquery.js"></script> -->
     <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/holder.js"></script>
-	
-	<!-- Popover -->
-	<script>
-			<!-- Use $('#blob') for a single element with id=blob. Or $('[id=blob]') for multiple elements with id=blob. -->
-			$('[id=ext-link]').popover({placement:'bottom', trigger:'hover', container: 'body'});
-			$('[id=ext-tooltip]').tooltip({placement:'bottom', trigger:'hover', container: 'body'});	
-	</script>
+    <!-- <script src="javascripts/holder.js"></script> -->
 	
   </body>
 </html>
