@@ -4,4 +4,4 @@ permalink: /posts/:title
 auto: true
 rdiscount:
   extensions: [smart]
-baseurl: /journal
+repository: https://github.com/rafaelrezend/rafaelrezend.github.io/tree/master/journal
