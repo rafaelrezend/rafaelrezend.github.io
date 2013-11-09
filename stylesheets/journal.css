@@ -27,8 +27,10 @@ hr{
 	margin: 2em 1em;
 }
 .content{
-	margin-left: 140px;
-	width: 800px;
+	margin-left: 160px;
+	margin-right: 160px;
+	max-width: 800px;
+	min-width: 600px;
 	margin-bottom: 50px;
 }
 .related{
@@ -100,21 +102,20 @@ h1{
 	margin: 10px 0 20px 0;
 }
 
-#header #rafael{
-	font-size: 20px;
+#header #firstline{
+	font-size: 9px;
 	letter-spacing: 1px;
 	color: #666;
 }
 
-#header #rafael:hover{
+#header #firstline:hover{
 	color: #000;
 }
 
-#header #rezende{
-	font-size: 14px;
+#header #lastline{
+	letter-spacing: 1px;
 	font-weight: bold;
-	letter-spacing: 10px;
-	color: #000;
+	color: #666;
 }
 
 #header .site{
@@ -146,6 +147,7 @@ h1{
 }
 #header #sections a:hover{
   color: #ccc;
+  padding: 3px 20px;
 }
 
 
@@ -167,7 +169,7 @@ h1{
   border: 1px solid #ccc;
 }
 #post p{
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 1.2em;
   line-height: 1.7em;
 }
