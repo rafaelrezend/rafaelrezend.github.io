@@ -1,3 +1,8 @@
+---
+layout: post
+title: Java persistence with Hibernate
+---
+
 Hibernate is an object-relational mapping (ORM) library for Java widely used in industry to provide a persistence of Java objects into relational databases.
 
 The main purpose of Hibernate is to abstract the database operations so that developers could handle the objects without worries about the SQL calls and object conversions happening underneath the application.
@@ -82,7 +87,6 @@ Given a table *alarms* with fields *id*, *descr* and *instant*, the respective m
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 23, 2013 5:39:14 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="com.rezend.hibdb.Alarm" table="alarms">
         <id name="id" type="java.lang.Integer">
@@ -133,3 +137,5 @@ try {
 This is the nearly the simplest way to setup and use Hibernate, although it is indeed a powerful tool with many other features.
 
 The [Hibernate Community Documentation](http://docs.jboss.org/hibernate/orm/4.2/devguide/en-US/html/) is undoubtedly the best starting point.
+
+The complete example including Data Access Objects (DAO) can be found in my [repository](https://github.com/rafaelrezend/HibernateSandbox).
