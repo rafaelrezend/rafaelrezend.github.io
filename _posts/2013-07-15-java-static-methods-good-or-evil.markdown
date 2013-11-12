@@ -41,7 +41,7 @@ objA.handleObject(objB);
 objC.handleObject(objD);
 ```
 
-with `handleObject(...) performing specific tasks depending on the owner object.
+with `handleObject(...)` performing specific tasks depending on the owner object.
 
 **So, when is it reasonable to use static methods?**
 
