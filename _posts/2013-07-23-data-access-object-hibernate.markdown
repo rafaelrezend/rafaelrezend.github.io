@@ -3,7 +3,7 @@ layout: post
 title: Data Access Object (DAO) for Hibernate
 ---
 
-The [last post](persistence-with-hibernate) introduced a basic implementation using Hibernate.
+The [last post](/persistence-with-hibernate) introduced a basic implementation using Hibernate.
 At the end, few lines presented a secure way to store data into the database, with the ability of undoing the changes in case of failure *(rollback)*.
 
 Usually, read and write operations are extensively used along the application.
