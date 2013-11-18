@@ -74,7 +74,7 @@ Finally, I'm invoking the OCR tool itself `Tesseract.getInstance().doOCR(scaledP
 After running the application for over 500 images, I've got an accuracy of around 95%.
 The usage of *Tesseract* is really straightforward, but I realized that the pre-processing of images was the most relevant issue, with heavy impact on my results.
 
-The OCR module for my specific scenario can be found [here](https://raw.github.com/rafaelrezend/eCommerceCrawler/master/src/rezend/musix/tools/OCRModule.java).
+The OCR module for my specific scenario can be found [here](https://raw.github.com/rafaelrezend/eCommerceCrawler/master/src/rezend/ecomm/tools/OCRModule.java).
 
 
 
