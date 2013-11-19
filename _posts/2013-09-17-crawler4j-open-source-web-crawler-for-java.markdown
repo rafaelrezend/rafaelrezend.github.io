@@ -3,8 +3,6 @@ layout: post
 title: Crawler4j&#58; Open-source Web Crawler for Java
 ---
 
-I found [crawler4j](https://code.google.com/p/crawler4j/)
-
 Weeks ago I was given a task to read values from an e-commerce website.
 The idea was simple: a link was given, the application should parse the content of the HTML, download the specific value and store it.
 I decided to use a crawler instead, and started looking for open-source solutions for Java with fast implementation.
