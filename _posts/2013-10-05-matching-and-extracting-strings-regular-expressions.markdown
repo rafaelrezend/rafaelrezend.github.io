@@ -40,19 +40,19 @@ Then, an advanced usage would be to extract a part comprehended by that pattern.
 For instance, suppose we want to extract the value represented by `#VALUE#` in the following URL tag:
 
 ```html
-<h2 style="text-align:left;">#VALUE#</h2>
+<tag style="text-align:left;">#VALUE#</tag>
 ```
 
 The respective regular expression should be:
 
 ```java
-String regex = "<h2 style=\"text-align:left;\">(.*?)</h2>"
+String regex = "<tag style=\"text-align:left;\">(.*?)</tag>"
 ```
 
-So, we are interested on everything between `<h2 style="text-align:left;">` and `</h2>` tags, which is represented by the regular expression `(.*?)`.
+So, we are interested on everything between `<tag style="text-align:left;">` and `</tag>` tags, which is represented by the regular expression `(.*?)`.
 
 To extract this value, the `Matcher` provides the function `Matcher.group()`.
-So, given a `content` containing the String `<h2 style="text-align:left;">123456789</h2>`:
+So, given a `content` containing the String `<tag style="text-align:left;">123456789</tag>`:
 
 ```java
 System.out.println(matcher.groupCount());
