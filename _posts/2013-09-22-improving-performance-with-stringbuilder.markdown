@@ -43,5 +43,5 @@ while ((line = ContentBuffer.readLine()) != null)
 String content = contentSB.toString();
 ```
 
-`StringBuilder` is mutable, so its value can be changed without new instantiation.
+`StringBuilder` is mutable, so it can be changed without new instantiation.
 That's it!!
