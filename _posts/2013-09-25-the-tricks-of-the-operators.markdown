@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The tricks of the &#43;&#61; operator
+title: Tricks of the &#43;&#61; operator
 ---
 
 Suppose you have the two variables below:
