@@ -45,3 +45,5 @@ String content = contentSB.toString();
 
 `StringBuilder` is mutable, so it can be changed without new instantiation.
 That's it!!
+
+An interesting discussion can be found [here](http://www.javaranch.com/journal/2003/04/immutable.htm) and [here](http://programmers.stackexchange.com/questions/195099/why-is-string-immutable-in-java).
