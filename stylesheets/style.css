@@ -23,6 +23,20 @@ body {
   z-index: 15;
 }
 
+.navbar {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.navbar-brand {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:200%;
+	letter-spacing:7px;
+	padding-top:20px;
+}
+
 /* TOP IMAGE
 -------------------------------------------------- */
 
