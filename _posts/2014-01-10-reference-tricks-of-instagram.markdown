@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reference: Instagram's tricks
+title: Reference: Instagram&#39;s tricks for responsiveness
 ---
 
 A perfect design for any web application nowadays is all about scalability! ... well, not really.
