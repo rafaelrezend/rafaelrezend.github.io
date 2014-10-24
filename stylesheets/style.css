@@ -12,8 +12,6 @@ body {
     border: 1px solid #FF0000;
 } */
 
-
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -53,7 +51,7 @@ body {
 /* SOCIAL MEDIA ICONS
 -------------------------------------------------- */
 
-.socialmedia {
+.socialmedia .visible-sm {
 	position: relative;
 	margin-top: 20px;
 	text-align: center;

@@ -1,0 +1,33 @@
+/* PUBLICATION CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.publication {
+  max-width: 768px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.publication .single{
+  margin-bottom: 50px;
+}
+
+.publication .col-12 {
+  /* border-bottom: 2px solid #eaeaea; */
+}
+
+.publication h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.publication a {
+  text-decoration: none;
+}
+
+.publication p {
+  text-align: justify;
+}
+
