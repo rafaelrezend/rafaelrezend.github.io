@@ -1,3 +1,9 @@
+"Until your pretty code is in production, making money, or doing whatever it does, you've just wasted your time" (Chris Read - @cread [https://twitter.com/cread])
+
+Continuous Delivery is all about closing the gap between developers and users, so that features are flowing much faster from one end to another.
+
+
+
 Useful sources
 
     Book: Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation by Jez Humble and David Farley
