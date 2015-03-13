@@ -139,7 +139,47 @@
         <br><br>
 
         <p><b>Save</b> your job configuration and you are ready to go!</p>
-		
+        
+        <br>
+        
+        <h2>Workflow plugin compatibility</h2>
+        <hr class="divider">
+        
+        <p>Starting from version 0.2.0, Play!Framework plugin can be used within the Workflow plugin for Jenkins. This allows your Play project to be inserted into a more complex build environment that only Workflow provides. Delivery Pipelines are one of the main benefits, allowing higher parallelism and better control of the build chain.</p>
+        
+        <p>In order to use it, simply create a new Workflow job and use its <b>Snippet Generator</b> feature to create the Play command from the already known User Interface.</p>
+        
+        <p>Select <i>General Build Step</i> and <i>Invoke Play!Framework</i>.</p><br>
+            
+        <img src="images/play-plugin/play-tut-fig6.png" width="100%">
+        <br><br>
+        
+        <p>Fill up the fields and select the goals as in a regular <b>Freestyle Project</b>.</p><br>
+            
+        <img src="images/play-plugin/play-tut-fig7.png" width="100%">
+        <br><br>
+        
+        <p>Pressing <b>Generate Groovy</b> will provide the complete Groovy command.</p><br>
+        
+        <img src="images/play-plugin/play-tut-fig8.png" width="100%">
+        <br><br>
+        
+        <p>Copy the command and paste it into the Groovy text field. The <i>node</i> function is a basic requirement for any script executed within the Workflow plugin.</p><br>
+        
+        <img src="images/play-plugin/play-tut-fig9.png" width="100%">
+        <br><br>
+
+        <p>Copy the command and paste it into the Groovy text field. The <i>node</i> function is a basic requirement for any script executed within the Workflow plugin.</p>
+        <p>The configuration is ready! For more information on the Workflow plugin and how to build Delivery Pipelines, refer to the links below:</p>
+        
+        <p><a href="https://github.com/jenkinsci/workflow-plugin">Workflow plugin on Github</a></p>
+        <p><a href="https://github.com/jenkinsci/workflow-plugin/blob/master/TUTORIAL.md">Getting started with Workflow</a></p>
+        <p><a href="https://github.com/jenkinsci/workflow-plugin/blob/master/basic-steps/CORE-STEPS.md">Interacting with build status</a></p>
+        
+        <p>Hope it helps! For comments, suggestions or bug reporting, please contact me by the e-mail seen on top of this page.</p>
+        
+        <br><br>
+        
 	</div><!-- /.container -->
 	  
 	<hr class="divider">
@@ -147,7 +187,7 @@
 	<!-- FOOTER -->
 	<footer>
 		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2014 Rafael Rezende</p>
+		<p>&copy; 2015 Rafael Rezende</p>
 	</footer>
 
     </div><!-- /.container -->
