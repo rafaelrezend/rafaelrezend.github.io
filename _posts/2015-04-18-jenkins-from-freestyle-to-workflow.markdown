@@ -7,7 +7,7 @@ title: Jenkins&#58; from freestyle to Workflow
 
 Another reason, from my humble point of view, is the shiny GUI that comes with this package, which most probably contributed to enchant those who preferred such *tangible* experience over plain-text Maven, Ant etc. Setting up a build has never been that easy.
 
-Jenkins was designed so that every build configuration could be described in a separate self-contained *job*. Every job has, among other features, sequential build steps and post-build steps which are executed once a build is requested. In the meantime, further requests are queued, waiting for the resources (aka *executors*) to become available once again.
+Jenkins was designed so that every build configuration could be described in a separate self-contained *job*. Every job has, among other features, sequential build steps and post-build steps which are executed once a build is requested. In the meantime, further requests are queued, waiting for resources (aka *executors*) to become available once again.
 
 This design regards the job as a single resource, assigned at the beginning of the build execution and held until the very end. In practice, though, every build and post-build step may require a different set of resources. Envisioning the job in a finer granularity automatically prompts the idea that, in fact, multiple build requests could be handled concurrently with the same set of atomic resources. As soon as a resource is freed, another build can use it while the previous build continuous with its business somewhere else. This is the fundamental idea of the so-called **Delivery Pipeline**, core practice of Continuous Delivery.
 
@@ -30,5 +30,19 @@ In addition to those intrisic features, the Workflow plugin has two very helpful
 
 The documentation for the Workflow is still growing as the community keeps improving the plugin. There is still a lot of work ahead in terms of compatibility: existing plugins must be adapted, although many of them require just minor changes. Since this step should be proactively taken by the main developers of each individual plugin, this may be the point where old and no longer maintaned plugins will become deprecated and leave the game.
 
+If you feel like implementing a pipeline tonight -- and I would recommend that **:-)** -- check out the references I'm leaving below. This is the material I currently rely on whenever necessary. Most of it comes from official means (Jenkins core or Workflow developers). [*Cloudbees*](wwww.cloudbees.com) guys provide webinars on this topic. Talking of it, *Cloudbees* maintains also a [Jenkins Enterprise]() environment with extra plugins, including the [Stage View]() as a really friendly interface for the Delivery Pipeline:
 
-The Workflow plugin is nothing more than the conclusion that nothing can provide more control than code itself. It's the exact science. As the GUI challenges became more unreliable to handle such complex build structures.
+
+
+Finally, the references:
+
+Workflow Getting Started
+
+Workflow Basic syntax
+
+Workflow SCM
+
+Example of a Workflow script from Cyrille leClerc.
+
+
+If *Continuous Integration*, *Continuous Delivery* and *Delivery Pipeline* still do not make any sense for you, check out the references from [this post](/post/continuous-delivery-references/).
