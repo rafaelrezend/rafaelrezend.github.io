@@ -17,7 +17,7 @@ Until December 2014, Jenkins relied on few plugins to mimic Delivery Pipelines. 
 
 With those tools and proper infrastructure, one could easily add some degree of concurrency by simply splitting a single job into several minor jobs (*stages*) triggered one after the other. The implementation of a Delivery Pipeline and its benefits are very well described by Jez Humble in [this chapter of his book](http://www.informit.com/articles/article.aspx?p=1621865) (here called *Deployment Pipeline*).
 
-Still, build flows became more demanding, requiring more control and dynamicity, yet with the same reliability of sequential builds. That's when [Jesse Glick](https://github.com/jglick) introduced the [https://github.com/jenkinsci/workflow-plugin](Workflow plugin) for Jenkins.
+Still, build flows became more demanding, requiring more control and dynamicity, yet with the same reliability of sequential builds. That's when [Jesse Glick](https://github.com/jglick) introduced the [Workflow plugin](https://github.com/jenkinsci/workflow-plugin) for Jenkins.
 
 ### The Workflow plugin ###
 
@@ -30,19 +30,38 @@ In addition to those intrisic features, the Workflow plugin has two very helpful
 
 The documentation for the Workflow is still growing as the community keeps improving the plugin. There is still a lot of work ahead in terms of compatibility: existing plugins must be adapted, although many of them require just minor changes. Since this step should be proactively taken by the main developers of each individual plugin, this may be the point where old and no longer maintaned plugins will become deprecated and leave the game.
 
-If you feel like implementing a pipeline tonight -- and I would recommend that **:-)** -- check out the references I'm leaving below. This is the material I currently rely on whenever necessary. Most of it comes from official means (Jenkins core or Workflow developers). [*Cloudbees*](wwww.cloudbees.com) guys provide webinars on this topic. Talking of it, *Cloudbees* maintains also a [Jenkins Enterprise]() environment with extra plugins, including the [Stage View]() as a really friendly interface for the Delivery Pipeline:
-
-
+If you feel like implementing a pipeline tonight -- and I would recommend that **:-)** -- check out the references I'm leaving below. This is the material I currently rely on whenever necessary. Most of it comes from official means (Jenkins core or Workflow developers). [*Cloudbees*](https://www.cloudbees.com/) guys provide webinars on this topic. Talking of it, *Cloudbees* maintains also a [Jenkins Enterprise](https://www.cloudbees.com/products/jenkins-enterprise) environment with extra plugins, including the [Stage View](http://blog.cloudbees.com/2014/12/jenkins-operations-and-continuous.html) as a really friendly interface for the Delivery Pipeline:
 
 Finally, the references:
 
-Workflow Getting Started
+* [**Workflow Getting Started**](https://github.com/jenkinsci/workflow-plugin/blob/master/TUTORIAL.md)
 
-Workflow Basic syntax
+* [**Reusing build steps from freestyle projects**](https://github.com/jenkinsci/workflow-plugin/blob/master/basic-steps/CORE-STEPS.md)
 
-Workflow SCM
+* [**Using version control from a workflow**](https://github.com/jenkinsci/workflow-plugin/blob/master/scm-step/README.md)
 
-Example of a Workflow script from Cyrille leClerc.
+* [**Example of a Workflow script**](https://gist.github.com/cyrille-leclerc/0dc73659e6d2a92f014a) by Cyrille leClerc.
 
+* [**Another example of a Workflow script**](https://github.com/jenkinsci/workflow-plugin-pipeline-demo/blob/master/flow.groovy) by Jesse Glick.
+
+<br/>
+
+* **Orchestrating the Continuous Delivery Process in Jenkins with Workflow (10.12.2014)**
+
+<p align="center"><iframe width="420" height="315" src="https://www.youtube.com/embed/ZqfiW8eVcuQ" frameborder="0" allowfullscreen></iframe></p>
+
+<br/>
+
+* **Jenkins Workflow Screencast**
+
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Welwf1wTU-w" frameborder="0" allowfullscreen></iframe></p>
+
+<br/>
+
+* **Workflow in Jenkins (JUC SF 2014)**
+
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/rswdksvwvJY" frameborder="0" allowfullscreen></iframe></p>
+
+<br/>
 
 If *Continuous Integration*, *Continuous Delivery* and *Delivery Pipeline* still do not make any sense for you, check out the references from [this post](/post/continuous-delivery-references/).
