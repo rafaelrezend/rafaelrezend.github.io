@@ -12,8 +12,8 @@ The *Play! plugin for Jenkins* was specially useful because of the intuitive GUI
 
 The Workflow plugin brings the whole story *closer* to command line again. Now, running pure *Play/Activator* commands directly from Groovy is as easy as invoking the Play! plugin itself in the same interface. That explains why the migration may not be that much relevant **;-)** Still it's nice to learn.
 
-Hints on how to migrate your freestyle job to Workflow:
-
+Hints on how to migrate your freestyle job to Workflow [here](https://github.com/jenkinsci/workflow-plugin/blob/master/scm-step/README.md).
+The already [compatible plugins](https://github.com/jenkinsci/workflow-plugin/blob/master/COMPATIBILITY.md) are also a good reference.
 
 Hints on how to use the *Play! plugin* on Workflow:
 
