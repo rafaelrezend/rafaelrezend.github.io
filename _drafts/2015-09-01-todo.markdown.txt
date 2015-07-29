@@ -1,0 +1,92 @@
+"Every build is a release candidate." (Jez Humble)
+"The job of a deployment pipeline is to kill the build." (Jez Humble)
+
+"How long would it take your organization to deploy a change that involves just one single line of code? Do you do this on a repeatable, reliable basis?" (Mary and Tom Poppendieck)
+
+"If you log into a server to do a change, you are probably doing something wrong." (Rolf Russel)
+
+"We don’t have a release manager and there are no set weekly deploys. Developers and designers are responsible for shipping new stuff themselves as soon as it’s ready." (GitHub blog)
+
+"Until your pretty code is in production, making money, or doing whatever it does, you’ve just wasted your time." (Chris Read)
+
+"We find that in general you should expect to spend about 50% of your time creating or maintaining automated tests."
+(Jez Humble)
+
+"Usually the first stage of a deployment pipeline will do any compilation and provide binaries for later stages. Later stages may include manual checks, such as any tests that can't be automated. Stages can be automatic, or require human authorization to proceed, they may be parallelized over many machines to speed up the build. Deploying into production is usually the final stage in a pipeline." (Martin Fowler)
+
+-------------------------------------------------------
+
+"We have taken this to the point where deploying our applications, even to production, is often done by a simple click of a button to select the build that we wish to deploy. This creates a powerful feedback loop: Since it's so simple to deploy your application to testing environments, your team gets rapid feedback on both the code and the deployment process."
+
+"Developers can see which builds have been through which stages in the release process, and what problems were found. Managers can watch such key metrics as cycle time, throughput, and code quality. As a result, everybody in the delivery process gets two things: access to the things they need when they need them, and visibility into the release process to improve feedback so that bottlenecks can be identified, optimized, and removed. This leads to a delivery process which is not only faster but also safer."
+
+See figure: 
+"As the build passes each test of its fitness, confidence in it increases. Therefore, the resources that we are willing to expend on it increase, which means that the environments the build passes through become progressively more production-like."
+
+"Your CI server should let you split these tests into suites which can be executed in parallel to increase their speed and give you feedback faster."
+
+"Only Build Your Binaries Once: Every time you compile the code, you run the risk of introducing some difference."
+"Deploy the Same Way to Every Environment: Using the same script to deploy to production that you use to deploy to development environments is a fantastic way to prevent the "it works on my machine" syndrome."
+"Smoke-Test Your Deployments: Determine whether the application is so badly broken that further testing is unnecessary."
+"Deploy into a Copy of Production: Confidence that going live will actually work."
+"Each Change Should Propagate through the Pipeline Instantly."
+"If Any Part of the Pipeline Fails, Stop the Line: If a deployment fails, the whole team owns that failure. They should stop and fix it before doing anything else."
+
+
+"The whole team owns the acceptance tests, in the same way as the whole team owns every stage of the pipeline. If the acceptance tests fail, the whole team should stop and fix them immediately."
+
+"It should be possible to deploy a single change to production through the deployment pipeline with the minimum possible time and ceremony."
+
+"Even if you don't need to release your software several times a day, the process of implementing a deployment pipeline will still make an enormous positive impact on your organization's ability to deliver software rapidly and reliably."
+
+"First of all, the whole pipeline does not need to be implemented at once. It should be implemented incrementally. If there is a part of your process that is currently manual, create a placeholder for it in your workflow. Ensure your implementation records when this manual process is started and when it completes. This allows you to see how much time is spent on each manual process, and thus estimate to what extent it is a bottleneck."
+
+"Second, your pipeline is a rich source of data on the efficiency of your process for building, deploying, testing, and releasing applications. Thus it becomes possible to see exactly what your process' bottlenecks are and attack them in order of priority."
+
+"Finally, your deployment pipeline is a living system. As you work continuously to improve your delivery process, you should continue to take care of your deployment pipeline, working to improve and refactor it the same way you work on the applications you are using it to deliver."
+
+"Feedback is at the heart of any software delivery process. The best way to improve feedback is to make the feedback cycles short and the results visible. You should measure continually and broadcast the results of the measurements in some hard-to-avoid manner, such as on a very visible poster on the wall, or on a computer display dedicated to showing bold, big results. Such devices are known as information radiators."
+
+"The important question, though, is: What should you measure? What you choose to measure will have an enormous influence on the behavior of your team (this is known as the Hawthorne effect). Measure the lines of code, and developers will write many short lines of code. Measure the number of defects fixed, and testers will log bugs that could be fixed by a quick discussion with a developer."
+
+"Once you have a deployment pipeline implemented, inefficiencies in your release process will become obvious."
+Approaches are:
+- adding more automated acceptance tests
+- parallelizing them more aggressively
+- making your testing environments more production-like
+- or by implementing better configuration management processes.
+
+
+http://www.informit.com/articles/article.aspx?p=1621865
+
+
+
+"Any branch by definition is designed to isolate change and so there’s a fundamental conflict between the idea of continuous integration and branching of any kind."
+
+http://www.infoq.com/interviews/farley-continuous-delivery
+
+
+"A key aspect of Continuous Delivery is making small, incremental changes to your applications and services. These are simpler to test and also, since only a small part of the application changes each time, make pinpointing and remedying the source of errors and other problems such as slowdowns much easier."
+
+http://www.infoq.com/articles/preparing-for-cd-in-the-enterprise
+
+http://www.infoq.com/articles/orch-pipelines-jenkins
+
+
+=======================================================
+My thoughts:
+-- The pipeline should start with cheaper/faster stages (unit tests) and increase to expensive/slower (manual tests) to the end.
+-- Every stage of pipeline can be polled with different intervals, always increasing, depending on how much resource is required for each one.
+-- The closer the stage works on its limit, better (for instance, try to set the interval a bit higher that the average it takes to complete. If a test stage takes 20 minutes, trigger it every 25 minutes. If there are two build servers available, cut the interval off by half). It means that the "delta changes" between execution is smaller.
+-- On the other hand, try to avoid queues.
+-- Test stages can check either binaries or sources.
+-- The build step does not necessarily need to be the first stage, given that some tests validate source code instead of binaries.
+-- The binary is generated only once!
+-- Every fix passes through the complete pipeline. There are no feature branches in CD. There could be a mechanism to skip a stage, but it goes against the CD concepts.
+-- It's important to keep the throughput...
+-- Jenkins jobs could be volatile. The important part is to keep track between source, configuration (input), binaries and reports (output).
+-- Regarding build servers: If I enter your server room and destroy your equipment, how long would it take to have a new build farm up and running?
+-- If a build did not get to the end of the pipeline, don't panic! The previous successful build is just few changes behind.
+-- If your environment is able to output a new release every two hours, think about how many code developers are able to produce in the same amount of time. That's the release step.
+
+-- Acceptance tests are closer to the business. "Place order" rather than "click order button," "confirm fund transfer" rather than "check fund_table has results," and so on.
