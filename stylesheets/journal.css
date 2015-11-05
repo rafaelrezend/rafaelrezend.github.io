@@ -20,6 +20,12 @@ p code, li code{
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 }
+
+code {
+	/* force long lines of code to break */
+	white-space: pre-wrap;
+}
+
 hr{
 	border: 0;
 	height: 1px;
