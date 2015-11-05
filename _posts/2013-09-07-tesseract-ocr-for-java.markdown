@@ -8,7 +8,7 @@ The idea was simple: a link was given, the application should parse the content 
 I decided to use a crawler instead, but this is another story.
 That's said, the task was indeed simple, except for the fact that values were images instead of text.
 
-![](/images/journal/2013-09-07-tesseract-ocr-for-java.jpg)
+![](/images/journal/2013-09-07-tesseract-ocr-for-java/2013-09-07-tesseract-ocr-for-java.jpg)
 
 So, I started my research on [Optical Character Recognition (OCR)](http://en.wikipedia.org/wiki/Optical_character_recognition) with two things in mind:
 - I should not re-invent the wheel. Probably, there are couple of efficient libraries out there for this purpose. I would save time, and time is money, right?
