@@ -5,9 +5,9 @@
 
 "If you log into a server to do a change, you are probably doing something wrong." (Rolf Russel)
 
-"We donít have a release manager and there are no set weekly deploys. Developers and designers are responsible for shipping new stuff themselves as soon as itís ready." (GitHub blog)
+"We don√≠t have a release manager and there are no set weekly deploys. Developers and designers are responsible for shipping new stuff themselves as soon as it√≠s ready." (GitHub blog)
 
-"Until your pretty code is in production, making money, or doing whatever it does, youíve just wasted your time." (Chris Read)
+"Until your pretty code is in production, making money, or doing whatever it does, you√≠ve just wasted your time." (Chris Read)
 
 "We find that in general you should expect to spend about 50% of your time creating or maintaining automated tests."
 (Jez Humble)
@@ -61,7 +61,7 @@ http://www.informit.com/articles/article.aspx?p=1621865
 
 
 
-"Any branch by definition is designed to isolate change and so thereís a fundamental conflict between the idea of continuous integration and branching of any kind."
+"Any branch by definition is designed to isolate change and so there√≠s a fundamental conflict between the idea of continuous integration and branching of any kind."
 
 http://www.infoq.com/interviews/farley-continuous-delivery
 
