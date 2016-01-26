@@ -4,3 +4,6 @@ permalink: /post/:title
 auto: true
 rdiscount:
   extensions: [smart]
+name: REZEND
+description: Just things I read, watch, like, write...
+url: http://rafaelrezend.github.io/
