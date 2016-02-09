@@ -1,5 +1,5 @@
 markdown: kramdown
-rouge: true
+highlighter: rouge
 permalink: /post/:title
 auto: true
 name: REZEND
