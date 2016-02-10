@@ -3,7 +3,7 @@ layout: post
 title: Data Access Object (DAO) for Hibernate
 ---
 
-The [last post](/post/persistence-with-hibernate) introduced a basic implementation using Hibernate.
+The [last post]({{ site.github.url }}/post/persistence-with-hibernate) introduced a basic implementation using Hibernate.
 At the end, few lines presented a secure way to store data into the database, with the ability of undoing the changes in case of failure *(rollback)*.
 
 Usually, read and write operations are extensively used along the application.
@@ -14,7 +14,7 @@ This intermediate entity is usually a [*Data Access Object (DAO)*](http://en.wik
 
 The respective DAO for the previous post using Hibernate can be implemented as follows:
 
-```java
+{% highlight java %}
 /**
  * Alarm Data Access Object. Contains a session factory builder and methods to
  * perform transactions with the database.
@@ -49,13 +49,13 @@ public class AlarmDAO {
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
-```
+{% endhighlight %}
 
 Every DAO instantiate a `SessionFactory` once.
 The method `getSessionFactory()` is then invoked every time a new transaction has to be performed.
 Following it is shown the implementations of methods `addAlarm(...)`, `updateAlarm(...)` and `deleteAlarm(...)`.
 
-```java
+{% highlight java %}
 /**
  * Add alarm to the database. The alarm parameter receives a new ID (key)
  * even if it had a previously assigned ID.
@@ -124,7 +124,7 @@ public void deleteAlarm(Alarm alarm) {
 		session.close();
 	}
 }
-```
+{% endhighlight %}
 
 In every method above, a `Transaction` is started for a session.
 If something unexpected happens while the write operation fails, the transaction is undone and the session closed.
@@ -132,7 +132,7 @@ The `flush()` method forces Hibernate to synchronize the in-memory state of the 
 
 Through this DAO, the higher layers of the application are then able to persist information into the database in a transparent way:
 
-```java
+{% highlight java %}
 // Creating DAO to handle DB transactions
 AlarmDAO alarmDAO = new AlarmDAO();
 
@@ -152,7 +152,7 @@ alarmDAO.updateAlarm(alarm1);
 
 // So, to delete the just inserted alarm
 alarmDAO.deleteAlarm(alarm2);
-```
+{% endhighlight %}
 
 As a result, the business logic can change and invoke the DAO methods in different contexts without need to change the DAO itself.
 Similarly, any modification related to the ORM implementation (Hibernate in this case) will be reflected up to the DAO, so that the usage by the business logic remains untouched as long as the signature of the DAO methods are kept.

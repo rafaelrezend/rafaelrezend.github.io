@@ -14,7 +14,7 @@ Since I'm using MySQL in this example, the respective [connector](http://dev.mys
 The configuration of Hibernate is described in the `hibernate.cfg.xml`, usually located at the root of your project folder.
 An example of its content is seem below.
 
-```xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
 				"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -35,7 +35,7 @@ An example of its content is seem below.
 		
 	</session-factory>
 </hibernate-configuration>
-```
+{% endhighlight %}
 
 The next step consists basically on mapping the attributes of your Java class to the fields of your database.
 This mapping can be done either through [*Java Persistence Annotations (JPA)*](http://docs.jboss.org/hibernate/annotations/3.5/reference/en/html_single/#entity-mapping) or by setting up an additional XML mapping file.
@@ -44,7 +44,7 @@ The respective mapping file should be included in the `hibernate.cfg.xml` seen a
 
 Let's start then by creating our class **Alarm.java**, with the attributes *id*, *description* and *instant*.
 
-```java
+{% highlight java %}
 public class Alarm implements java.io.Serializable {
 
 	private Integer id;
@@ -75,7 +75,7 @@ public class Alarm implements java.io.Serializable {
 			this.instant = instant;
 	}
 }
-```
+{% endhighlight %}
 
 This class is a simple [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object) object, with getters and setters for each attribute.
 
@@ -83,7 +83,7 @@ This class is a simple [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object
 
 Given a table *alarms* with fields *id*, *descr* and *instant*, the respective mapping between **Alarm.java** and this table would be the following:
 
-```xml
+{% highlight xml %}
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
@@ -101,7 +101,7 @@ Given a table *alarms* with fields *id*, *descr* and *instant*, the respective m
         </property>
     </class>
 </hibernate-mapping>
-```
+{% endhighlight %}
 
 The first line within the `<hibernate-mapping>` tag relates the **Alarm.java** class with the table *alarms*.
 The primary key *id* receives a special tag where `<id name="id"...>` corresponds to the Java attribute and the `<column name="id"/>` to the database field. The *id* attribute is auto-generated.
@@ -110,7 +110,7 @@ The remaining properties follow the same principle, adding few other properties,
 
 Finally, Hibernate uses sessions to persist the object to database.
 
-```java
+{% highlight java %}
 // Creating first alarm with default values
 Alarm alarm = new Alarm();
 alarm.setDescription("foo");
@@ -132,7 +132,7 @@ try {
 	session.flush();
 	session.close();
 }
-```
+{% endhighlight %}
 
 This is the nearly the simplest way to setup and use Hibernate, although it is indeed a powerful tool with many other features.
 

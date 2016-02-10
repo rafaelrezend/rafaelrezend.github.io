@@ -12,7 +12,7 @@ The example below is quite simple: a Perl script process an input file which con
 
 So, starting from the input parameters of the Perl script and the creation of a handler:
 
-```perl
+{% highlight perl %}
 # checking for two parameters: input and output files
 if ($#ARGV != 1) {
 	print "usage: ./SortNumbers <input_file> <out_file>\n";
@@ -39,7 +39,7 @@ while (<FILE>) {
 
 # close input reader
 close FILE;
-```
+{% endhighlight %}
 
 Input parameters are contained in the `@ARGV` array.
 So, the first line checks if the index of the last position of this array (`$#ARGV`) is equals to 1, that is, the array `@ARGV` has exactly two values.
@@ -51,7 +51,7 @@ Otherwise, the content of the input file is concatenated into `$input_data` vari
 
 The block below starts with a function call `&sort_input()` which will be briefly discussed at the end.
 
-```perl
+{% highlight perl %}
 # call a subroutine to validate the input, split and sort
 my $output_data = &sort_input($input_data);
 
@@ -63,14 +63,14 @@ print OUTPUT "$output_data\n";
 
 # close output writer
 close OUTPUT;
-```
+{% endhighlight %}
 
 As seen above, the process of writing to file is very similar to reading.
 The operator `>` indicates that the content will be overwritten into the output file, while `>>` would concatenate instead.
 
 Finally the subroutine `sort_input()` is shown below:
 
-```perl
+{% highlight perl %}
 # subroutine to validate the input, split and sort values
 sub sort_input {
 
@@ -96,7 +96,7 @@ sub sort_input {
 	# join values placing comma in between them
 	return join(",", @sorted_array);
 }
-```
+{% endhighlight %}
 
 `@_` hold the parameters of the `sort_input` function.
 After, the function `shift(@_)` could be used instead of `$_[0]` to get the first value from the `@_` array.
@@ -110,7 +110,7 @@ If this operator is omitted, the `sort` function would place 12345 before 23, fo
 
 The complete code above can be placed in a single **.pl** file. An example of execution is shown below:
 
-```bash
+{% highlight shell %}
 $ echo "1,23,44,567,32,12,1,7,90,123,1024" > input.csv
 
 $ ./SortNumbers.pl input.csv output.csv
@@ -119,6 +119,6 @@ Output file is: output.csv
 
 $ cat output.csv
 1,1,7,12,23,32,44,90,123,567,1024
-```
+{% endhighlight %}
 
 More complete examples of Perl scripts can be found in my [repository](https://github.com/rafaelrezend/MiscScripts/tree/master/Perl).

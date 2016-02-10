@@ -18,7 +18,7 @@ One old reference, however, has a very interesting picture to start with: [A Vis
 So, let's implement a simple example in Java showing the basic capabilities of MongoDB.
 The only requirements for this example are a [MongoDB installation](http://www.mongodb.org/downloads) and the respective [Java MongoDB driver](http://docs.mongodb.org/ecosystem/drivers/java/).
 
-```java
+{% highlight java %}
 // Connecting to MongoDB
 MongoClient mongo = new MongoClient("localhost", 27017);
 
@@ -28,7 +28,7 @@ DB db = mongo.getDB("sandbox");
 // Get a collection from sandbox
 // Collection is automatically created if it does not exist
 DBCollection collection = db.getCollection("alarm");
-```
+{% endhighlight %}
 
 Since databases are schema-free, they can be seen merely as folders, easy to create on the fly as shown above.
 *Collections* are equivalent to tables in relational databases and are composed of *documents*.
@@ -36,7 +36,7 @@ Every *document* corresponds to a row in a table, with the main difference that 
 
 To create and insert a new document, a `BasicDBObject()` is instantiate and populate with key-value pairs:
 
-```java
+{% highlight java %}
 // Create objects with key and value
 BasicDBObject alarm1 = new BasicDBObject();
 alarm1.put("_id", 0);
@@ -52,7 +52,7 @@ alarm2.put("instant", new Date(0));
 
 // Insert object into the collection
 collection.insert(alarm1, alarm2);
-```
+{% endhighlight %}
 
 By default, the index of documents is given by `_id`.
 If no key `_id` is explicitly added, MongoDB will generate it automatically.
@@ -60,7 +60,7 @@ If no key `_id` is explicitly added, MongoDB will generate it automatically.
 BasicDBObject is also used as reference for searching objects in the database. The query will match the objects that have the same key-value pairs as the reference one.
 The code below will retrieve the first alarm `alarm1` in a `DBCursor`:
 
-```java
+{% highlight java %}
 BasicDBObject alarmSearch = new BasicDBObject("_id", 0);
 
 // To perform the search for a specific object
@@ -68,25 +68,25 @@ DBCursor cursor = collection.find(alarmSearch);
 while (cursor.hasNext()) {
 	System.out.println(cursor.next());
 }
-```
+{% endhighlight %}
 
 Updating a document requires an additional operator `$set` to replace a value, or `$inc` to increment it. So, for instance, the operation below completely overwrites the attribute *owner*...
 
-```java
+{% highlight java %}
 BasicDBObject oldAlarm = new BasicDBObject("_id", 1);
 BasicDBObject updatedAlarm = new BasicDBObject("owner", 999);
 BasicDBObject updaterAlarm = new BasicDBObject("$set", updatedAlarm);
 collection.update(oldAlarm, updaterAlarm);
-```
+{% endhighlight %}
 
 ... while the next one increments the value of the same attribute by one:
 
-```java
+{% highlight java %}
 oldAlarm = new BasicDBObject("_id", 1);
 updatedAlarm = new BasicDBObject("owner", 1);
 updaterAlarm = new BasicDBObject("$inc", updatedAlarm);
 collection.update(oldAlarm, updaterAlarm);
-```
+{% endhighlight %}
 
 When the user tries to update the document without using the `$set` or `$inc` operator, as in `collection.update(oldAlarm, updatedAlarm)`, the entire document is replaced.
 This is a very common mistake when starting with MongoDB.
@@ -95,8 +95,8 @@ Also, MongoDB does not allow indexes to be changed. Any attempt will raise a `Wr
 
 Using the same `BasicDBObject oldAlarm`, the document with `_id = 1` can be removed as seen below:
 
-```java
+{% highlight java %}
 collection.remove(oldAlarm);
-```
+{% endhighlight %}
 
 The complete implementation is available on my [repository](https://github.com/rafaelrezend/MongoDBSandbox).

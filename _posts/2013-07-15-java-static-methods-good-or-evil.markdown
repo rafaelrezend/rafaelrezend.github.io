@@ -14,16 +14,16 @@ Instead, they are methods of the class only and are not supposed to change the s
 
 Static methods are widely used in utility classes, such as [Math](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html). What makes this pattern so tempting is the possibility to invoke a method as simply as
 
-```java
+{% highlight java %}
 MyUtilityClass.handleObjects(objA, objB);
-```
+{% endhighlight %}
 
 instead of
 
-```java
+{% highlight java %}
 MyUtilityClass muc = new MyUtilityClass();
 muc.handleObjects(objA, objB);
-```
+{% endhighlight %}
 
 But then assume **objA** and **objB** are instances of class `MySuperClass` and you want to create `MySubClass` **objC** and **objD**, in which `MySubClass` extends `MySuperClass`.
 You still can call `MyUtilityClass.handleObjects(objC, objD)`.
@@ -36,10 +36,10 @@ The same issue is known to affect JUnit testing, besides the fact that the testi
 Finally, the best implementation for this specific case would be then an object method in `MySuperClass` (with the advantage of cutting off a parameter to use `this.` instead).
 The invocation would be
 
-```java
+{% highlight java %}
 objA.handleObject(objB);
 objC.handleObject(objD);
-```
+{% endhighlight %}
 
 with `handleObject(...)` performing specific tasks depending on the owner object.
 
