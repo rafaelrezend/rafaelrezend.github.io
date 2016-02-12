@@ -82,4 +82,18 @@ This time the build fails because **compC** has conflicting sources.
 
 --
 
-## Final conclusion ##
+## Conclusion ##
+
+The boundaries between *SCM* and *Continuous Integration* are, in most cases, very well defined.
+A build environment fetches from a branch (tag, revision, snapshot... you name it), just like a regular user would do.
+In that sense, CI would be nothing else than a "read-only" user, whose tasks are to pile up snapshots for the build flow, manage the builds, their results, deploy artifacts and many more steps which are pretty much outside the scope of SCM.
+
+With RTC, however, this comparison is not 100% true: the way Jenkins loads the *Repository Workspace* is significantly different from how it's done in the RTC Client.
+
+* Every assigned *flow target* is taken into account, independently of the "default" and "current" settings.
+* *Repository Workspace's components* are synchronized with *flow targets' components*. When components are added or removed from any *flow target*, these updates are propagated to the *RW*.
+* As consequence, *flow targets* are not allowed to have *components* in common.
+
+These properties benefit bigger projects in Continuous Integration. The diagram below illustrates a basic SCM configuration with interface to Jenkins.
+
+<img src="{{ site.github.url }}/images/journal/2016-02-11-rtc-jenkins-flow-targets-in-ci/diagram-ci-rtc.png" style="width: 600px;"/>
