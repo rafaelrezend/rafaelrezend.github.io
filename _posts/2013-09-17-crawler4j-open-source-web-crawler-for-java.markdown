@@ -13,7 +13,7 @@ So, below I show the implementation that fits my needs: *simply store all availa
 For the implementation, I used one class **(ProductCrawler)** to define the crawler's behaviour, and another **(CrawlerControl)** for... you guessed it.
 The code is well commented (good practice!), no much need for further explanation.
 
-```java
+{% highlight java %}
 public class ProductCrawler extends WebCrawler {
 
 	private final static Pattern FILTERS = Pattern.compile(
@@ -50,7 +50,7 @@ public class ProductCrawler extends WebCrawler {
 		pl.put(url);
 	}
 }
-```
+{% endhighlight %}
 
 This web crawler is a producer of product links (It's was developed for an e-commerce). It writes links to a global singleton `pl`.
 
@@ -59,7 +59,7 @@ However, this check could be cpu consuming, so the current implementation adds e
 
 The crawler controller is simple:
 
-```java
+{% highlight java %}
 public class CrawlerControl {
 
 	public static void startCrawler() {
@@ -111,17 +111,17 @@ public class CrawlerControl {
 		}
 	}
 }
-```
+{% endhighlight %}
 
 Then, in the main file, it is invoked as simply as this:
 
-```java
+{% highlight java %}
 // creation of the unique instance containing the list of links
 LinksList pList = LinksList.getInstance();
 
 // starts the web crawler in parallel (this crawler is non blocking)
 CrawlerControl.startCrawler();
-```
+{% endhighlight %}
 
 Obviously, this is the shortest way to get your crawler running, as you could simply ignore the [whole theory](http://en.wikipedia.org/wiki/Web_crawler) behind it.
 Some properties can dramatically change your results, especially in the long run, if you need to keep your crawler running indefinitely and updating the content that has already been tracked. For instance, there are different algorithms for revisit policy, parallelism, politeness etc, but there is not a general solution that fits all. Every requirement should be study carefully for optimal efficiency.

@@ -12,10 +12,10 @@ To contextualize, the **upstream** repository is the `jenkinsci` and **origin** 
 First, **maven-release-plugin** will create a *tag* of your plugin in the repository. By default it will be `my-plugin-1.0.0`.
 These are the commands to remove this tag from the *upstream*:
 
-```
+{% highlight shell %}
 git tag -d play-autotest-plugin-1.0.0
 git push upstream :play-autotest-plugin-1.0.0
-```
+{% endhighlight %}
 
 Next, the release process will generate two additional commits to prepare the project for the next development cycle. These commits are shown on Github as follows:
 
@@ -24,20 +24,20 @@ Next, the release process will generate two additional commits to prepare the pr
 
 To undo them, we need to point the HEAD two commits behind:
 
-```
+{% highlight shell %}
 git push -f upstream HEAD^^:master
-```
+{% endhighlight %}
 
 Since we are executing the release command locally, the same commits will be present in our sandbox. To undo them, simply reset with the *origin*, which is still clean.
 
-```
+{% highlight shell %}
 git reset --hard origin/master
-```
+{% endhighlight %}
 
 Finally, two files are created locally as output, which should be removed before the next attempt to release the plugin:
 
-```
+{% highlight shell %}
 rm pom.xml.releaseBackup release.properties
-```
+{% endhighlight %}
 
 Now, everything is back to normal. Hope it's useful!

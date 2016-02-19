@@ -11,7 +11,7 @@ The method below receives the URL of the desired page, creates a connection, dow
 Here I'm using `StringBuilder` because of possible [performance issues](/post/improving-performance-with-stringbuilder).
 `StringEscapeUtils.unescapeHtml4(...)` is a ready-to-use method to decode HTML special characters.
 
-```java
+{% highlight java %}
 private static String getURLContent(URL url) {
 
 	// Holds the URL content
@@ -42,11 +42,11 @@ private static String getURLContent(URL url) {
 	// using Apache Commons Lang to obtain HTML special characters properly
 	return StringEscapeUtils.unescapeHtml4(urlContent.toString());
 }
-```
+{% endhighlight %}
 
 I'm using a `getURLContent(String urlStr)` to encapsulate the method above with an additional feature to add the `http://` protocol in case it's not provided.
 
-```java
+{% highlight java %}
 public static String getURLContent(String urlStr) {
 
 	String urlContent = null;
@@ -65,7 +65,7 @@ public static String getURLContent(String urlStr) {
 	}
 	return urlContent;
 }
-```
+{% endhighlight %}
 
 Voilà! The URL content can be easily extracted into a String using the `getURLContent(String urlStr)`.
 Remember to treat the Exceptions in the way that fits best your business requirements!

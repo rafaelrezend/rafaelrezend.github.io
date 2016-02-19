@@ -35,9 +35,9 @@ If you inspect its [pom.xml](https://raw.githubusercontent.com/jenkinsci/teamcon
 The Maven project above will compile only if a repository is provide via the `${env.RTC_Client_p2Repo}` property.
 Once the p2 repository is decompressed in the local filesystem (i.e. *C:\RTC-Client-p2Repo-5.0.1* for Windows), you can compile it as follows:
 
-```
+{% highlight shell %}
 mvn -Denv.RTC_Client_p2Repo=file:///C:\RTC-Client-p2Repo-5.0.1 clean compile
-```
+{% endhighlight %}
 
 It's straightforward, indeed! But the trick is the `file:///` prefix that, if missed, won't be accepted as a `<url>`.
 

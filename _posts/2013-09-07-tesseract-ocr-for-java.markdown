@@ -18,7 +18,7 @@ Making the story short, my research ended up with [tesseract-ocr](https://code.g
 
 In few lines, here is the basic usage:
 
-```java
+{% highlight java %}
 // buffer that holds the image from url
 BufferedImage priceImg = ImageIO.read(url);
 
@@ -53,7 +53,7 @@ String priceStr = Tesseract.getInstance().doOCR(scaledPriceImg);
 // get the german number format due to comma
 NumberFormat format = NumberFormat.getInstance(Locale.GERMAN);
 Double price = format.parse(priceStr).doubleValue();
-```
+{% endhighlight %}
 
 To start with, `ImageIO.read(url)` simply reads the image from the URL.
 Next, there is dumb validation because I knew that even the lowest values wouldn't fit in the dimension of 20x20 pixels.

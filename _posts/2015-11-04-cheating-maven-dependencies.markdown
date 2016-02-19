@@ -6,7 +6,7 @@ title: Quick dirty trick&#58; Overruling Maven Transitive Dependency
 In my example, I'm creating a Jenkins plugin (so, Maven) which has a dependency to the [Team Concert plugin](https://wiki.jenkins-ci.org/display/JENKINS/Team+Concert+Plugin) from IBM. As expected, Maven is going to resolve this dependency by fetching the corresponding .jar file from the Jenkins public repository, listed in the repository list of my own plugin.
 So I've added the following to my plugin's pom file:
 
-```
+{% highlight xml %}
 <dependencies>
     <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
@@ -14,11 +14,11 @@ So I've added the following to my plugin's pom file:
         <version>1.1.9.5</version>
     </dependency>
 </dependencies>
-```
+{% endhighlight %}
 
 And when executed...
 
-```
+{% highlight shell %}
 [INFO] ------------------------------------------------------------------------
 [INFO] Building TODO Plugin 1.0-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
@@ -39,7 +39,7 @@ Downloading: http://repo.maven.apache.org/maven2/com/ibm/team/build/com.ibm.team
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
 
-```
+{% endhighlight %}
 
 Unluckily, *Team Concert plugin* has a dependency of its own ([com.ibm.team.build.hpiplugin-rtc](https://github.com/jenkinsci/teamconcert-plugin/tree/master/com.ibm.team.build.hjplugin-rtc)), which is resolved locally in the developers' environment (not nice, uhm IBM?). No **.jar** is provided anywhere, so the only solution would be to build the dependency ourselves and install it in the local maven. This would require a bulky package -- part of the *Rational Team Concert* API -- and an environment similar of those devs.
 
@@ -58,7 +58,7 @@ Still, this is a repo with plenty of **.jar** files and their respective **.pom*
 
 To proceed, I'll open the `org.jenkins-ci.plugins:teamconcert:jar:1.1.9.4` Maven file at `.m2/repository/org/jenkins-ci/plugins/teamconcert/1.1.9.4/teamconcert-1.1.9.4.pom` and comment the following dependency:
 
-```
+{% highlight xml %}
 <dependencies>
     <!--
     <dependency>
@@ -75,13 +75,12 @@ To proceed, I'll open the `org.jenkins-ci.plugins:teamconcert:jar:1.1.9.4` Maven
         <scope>test</scope>
     </dependency>
 ...
-
 </dependencies>
-```
+{% endhighlight %}
 
 Building the project once again...
 
-```
+{% highlight shell %}
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -89,6 +88,6 @@ Building the project once again...
 [INFO] Finished at: Fri Oct 09 19:19:32 CEST 2015
 [INFO] Final Memory: 38M/225M
 [INFO] ------------------------------------------------------------------------
-````
+{% endhighlight %}
 
 ***Voilà!!!***
