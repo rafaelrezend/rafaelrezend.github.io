@@ -66,7 +66,7 @@ To proceed, I'll open the `org.jenkins-ci.plugins:teamconcert:jar:1.1.9.4` Maven
         <artifactId>com.ibm.team.build.hjplugin-rtc</artifactId>
         <version>1.0.2</version>
     </dependency>
-    -->
+    
     <dependency>
         <groupId>com.ibm.team.build</groupId>
         <artifactId>com.ibm.team.build.hjplugin-rtc</artifactId>
@@ -74,6 +74,7 @@ To proceed, I'll open the `org.jenkins-ci.plugins:teamconcert:jar:1.1.9.4` Maven
         <type>test-jar</type>
         <scope>test</scope>
     </dependency>
+    -->
 ...
 </dependencies>
 {% endhighlight %}
