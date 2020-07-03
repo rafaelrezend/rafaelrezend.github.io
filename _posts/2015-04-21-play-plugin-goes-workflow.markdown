@@ -3,7 +3,9 @@ layout: post
 title: Play! goes Workflow
 ---
 
-Few weeks ago I managed some time to bring the [*Play! plugin for Jenkins*](/play-plugin-jenkins.html) into the Workflow plugin.
+> **Update 03.07.2020:** Jenkins Pipelines reached sufficient maturity to render this plugin deprecated. I'm no longer maintainer of this plugin.
+
+Few weeks ago I managed some time to bring the [*Play! plugin for Jenkins*](https://wiki.jenkins.io/display/JENKINS/Play+Framework+Plugin) into the Workflow plugin.
 Learning how this migration is done was more relevant for me than the result itself **:)**
 **Why?**
 
@@ -17,6 +19,6 @@ The already [compatible plugins](https://github.com/jenkinsci/workflow-plugin/bl
 
 Hints on how to use the *Play! plugin* on Workflow:
 
- * [*Play! plugin for Jenkins*](/play-plugin-jenkins.html)
+ * [*Play! plugin for Jenkins*](https://wiki.jenkins.io/display/JENKINS/Play+Framework+Plugin)
 
 Enjoy!
