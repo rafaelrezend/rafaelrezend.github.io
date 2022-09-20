@@ -1,4 +1,5 @@
 # Site Settings
+# Do not use trailing slash (i.e. "/Sample"). For skipping base URL, leave empty quotes ("")
 baseurl: "/Grape-Academic-Theme"
 
 # Features Setting
